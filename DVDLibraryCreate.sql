@@ -1,0 +1,25 @@
+USE [master]
+GO
+
+If EXISTS (SELECT * FROM sys.databases WHERE NAME = N'DVDLibrary')
+BEGIN
+	EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'DVDLibrary';
+	ALTER DATABASE DVDLibrary SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE DVDLibrary;
+END
+
+CREATE DATABASE DVDLibrary
+GO
+
+USE DVDLibrary
+GO
+
+CREATE TABLE DVDs(
+	DVDId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Title VARCHAR(50) NOT NULL,
+	ReleaseYear VARCHAR(4) NOT NULL,
+	Director VARCHAR(50) NOT NULL,
+	Rating VARCHAR(5) NOT NULL,
+	Notes  VARCHAR(max) NULL
+)
+	

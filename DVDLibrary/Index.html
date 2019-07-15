@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>DVD Library</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/Index.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="index-div">
+        <header id="header" class="container">
+            <div class="row">
+                <button type="button" id="create" class="col-sm-3 btn-outline-dark">Create DVD</button>
+                <button type="button" id="search" class="col-sm-3 btn-outline-dark">Search</button>
+                <select id="category" class="col-sm-3" name="Category" required>
+                    <option selected disabled>Category</option>
+                    <option value="title">Title</option>
+                    <option value="release-year">Release Year</option>
+                    <option value="director">Director</option>
+                    <option value="rating">Rating</option>
+                </select>
+                <input type="text" placeholder="Search Term" id="search-term" class="col-sm-3 input-group-text" />
+            </div>
+            <hr />
+        </header>
+        <!--error message div-->
+        <div id="search-error"></div>
+
+        <table class="container">
+            <thead>
+                <tr class="row">
+                    <th class="col-3">Title</th>
+                    <th class="col-2">Release Year</th>
+                    <th class="col-3">Director</th>
+                    <th class="col-2">Rating</th>
+                    <th class="col-2"></th>
+                </tr>
+            </thead>
+            <tbody id="dvd-grid"></tbody>
+        </table>
+    </div>
+
+    <div id="edit-div">
+        <h1 id="edit-header">Edit DVD</h1>
+        <hr />
+        <!--error message div-->
+        <div id="edit-error"></div>
+
+        <label>DVD Title: </label>
+        <input type="text" id="edit-title" required /> <br />
+
+        <label>Release Year: </label>
+        <input type="number" id="edit-release-year" required /> <br />
+
+        <label>Director: </label>
+        <input type="text" id="edit-director" required /> <br />
+
+        <label>Rating: </label>
+        <select id="edit-rating" name="Category" required>
+            <option selected disabled>Category</option>
+            <option value="g">G</option>
+            <option value="PG">PG</option>
+            <option value="pg-13">PG-13</option>
+            <option value="r">R</option>
+        </select> <br />
+
+        <label>Notes: </label>
+        <textarea id="edit-notes"></textarea>  <br />
+
+        <button id="edit-cancel" type="button">Cancel</button>
+        <button id="edit-save" value="" type="button">Save Changes</button>
+    </div>
+
+    <div id="create-div">
+        <h1>Create DVD</h1>
+        <hr />
+        <!--error message div-->
+        <div id="create-error"></div>
+
+        <label>DVD Title: </label>
+        <input type="text" id="create-title" required /> <br />
+
+        <label>Release Year: </label>
+        <input type="number" id="create-release-year" required /> <br />
+
+        <label>Director: </label>
+        <input type="text" id="create-director" required /> <br />
+
+        <label>Rating: </label>
+        <select id="create-rating" name="Category" required>
+            <option selected disabled>Category</option>
+            <option value="g">G</option>
+            <option value="PG">PG</option>
+            <option value="pg-13">PG-13</option>
+            <option value="r">R</option>
+        </select> <br />
+
+        <label>Notes: </label>
+        <textarea id="create-notes"></textarea>  <br />
+
+        <button id="create-cancel" type="button">Cancel</button>
+        <button id="create-dvd" type="button">Create DVD</button>
+    </div>
+
+    <div id="display-div" class="container">
+        <h1 id="display-header"></h1>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <label class="float-left">DVD Title: </label>
+                <input id="display-title" />
+            </div>
+            <div class="col-sm-12">
+                <label class="float-left">Release Year: </label>
+                <input id="display-release-year" />
+            </div>
+            <div class="col-sm-12">
+                <label class="float-left">Director: </label>
+                <input id="display-director" />
+            </div>
+            <div class="col-sm-12">
+                <label class="float-left">Rating: </label>
+                <input id="display-rating" />
+            </div>
+            <div class="col-sm-12">
+                <label class="float-left">Notes: </label>
+                <input id="display-notes" />
+            </div>
+        </div>
+
+        <button id="display-back" type="button">Back</button>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/Index.js"></script>
+</body>
+</html>
